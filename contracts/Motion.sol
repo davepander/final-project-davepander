@@ -2,14 +2,22 @@ pragma solidity ^0.5.0;
 
 import './MotionBreaker.sol';
 
+/** @title A Motion contract, which maps to "Votable" Agenda items */
 contract Motion {
 
-   constructor() public {
-      /* Set the owner to the creator of this contract */
-      owner = msg.sender;
-   }
+    uint motion;
+    uint meeting;
 
-   enum State {Passed, Failed} //Enum
+    /** @dev A Motion can be Pending, Passed, or Failed */
+    enum State {Pending, Passed, Failed} //Enum
+
+   /** @dev Constructor for Motion contract
+       @param _meeting meeting ID of the active board meeting
+       @param _motion current motion under consideration */
+   constructor(uint _meeting, uint _motion) public {
+       motion = _motion;
+       meeting = _meeting;
+   }
 
     // This type represents a single board vote.
     struct MemberVote {
