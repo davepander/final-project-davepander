@@ -18,8 +18,8 @@ contract TestBoard {
   }
 
   function testListBoardName() public {
-    string returnState = board.listBoardName(newBoardMem);
-    Assert.equal("Anderson",returnState);
+    string memory returnState = board.listBoardName(newBoardMem);
+    Assert.isTrue(keccak256("Anderson") == keccak256(abi.encode(returnState)),"Name Match.");
   }
 
 }
