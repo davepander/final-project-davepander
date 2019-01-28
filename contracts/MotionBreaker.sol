@@ -2,8 +2,9 @@ pragma solidity ^0.5.0;
 
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
-// @title Motion Breaker
+/** @title Motion Breaker */
 contract MotionBreaker is Ownable {
+
   enum MotionStates { Started, Stopped }
   MotionStates public state;
 
@@ -13,7 +14,8 @@ contract MotionBreaker is Ownable {
     state = MotionStates.Started;
   }
 
-  // Only allow function to be executed with Motion Contract is in state "Started"
+  /** Only allow function to be executed when Motion Contract
+  is in state "Started" */
   modifier motionStarted() {
     require(state == MotionStates.Started);
     _;

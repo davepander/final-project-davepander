@@ -1,13 +1,15 @@
 pragma solidity ^0.5.0;
 
 import './MeetingBreaker.sol';
+// import 'jsmnsol-lib/JsmnSolLib.sol';
 
 contract Meeting {
     // A dynamically-sized array of `Motion` structs.
-    //Proposal[] public motions;
+    // Proposal[] public motions;
 
+    /** @dev Set the owner to the creator of this contract */
     constructor() public {
-        /* Set the owner to the creator of this contract */
+
         address owner = msg.sender;
     }
 

@@ -5,7 +5,7 @@ import "truffle/DeployedAddresses.sol";
 import "../contracts/Board.sol";
 
 contract TestBoard {
-  //The address of the adoption contract to be tested
+  // The address of the adoption contract to be tested
   Board board = Board(DeployedAddresses.Board());
 
   // The expected Chair/Owner of the Board
