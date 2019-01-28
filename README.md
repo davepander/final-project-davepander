@@ -42,6 +42,10 @@ This will provide an immutable and transparent record of board meetings. In this
     The BoardChair authorizes BoardMember addresses (MetaMask and potentially through uPort)
     The Meeting Agenda (JSON file) has already been stored (ideally on IPFS) and is referenced when the meeting is called to order.
 
+## Other Documents
+design_pattern_desicions.md (../Documentation/design_pattern_desicions.md)
+avoiding_common_attacks.md (../Documentation/avoiding_common_attacks.md 
+
 ## Setup
 ## Development setup:
 Install all dependencies for contract development:
@@ -74,3 +78,4 @@ Metamask Setup
 Install Metamask extension to chrome browser.
 Copy the Mnemonics of Ganache and login in Metamask.
 ```    
+This dApp also uses litesrv for the Web3 UI/UX hosted at `127.0.0.1:8545`.
