@@ -12,6 +12,7 @@ contract TestBoard {
   address newBoardMem = 0x1c88ecb319CdfED2434Fa576F702658FB245Fcd1;
 
   /** @title testAddBoardMem */
+  /// Here we verifty that a boardmember can add a new board member.
   function testAddBoardMem() public {
     bool returnState = board.addBoardMem(newBoardMem,"David","Anderson");
     Assert.isTrue(returnState,"Board Member Added.");
@@ -19,6 +20,7 @@ contract TestBoard {
 
 
   /** @title testListBoardName */
+  /// Here we call a known board member and compare last name strings.
   function testListBoardName() public {
     string memory returnState = board.listBoardName(newBoardMem);
     Assert.isTrue(keccak256("Anderson") == keccak256(abi.encode(returnState)),"Name Match.");
