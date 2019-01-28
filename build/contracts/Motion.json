@@ -1,0 +1,970 @@
+{
+  "contractName": "Motion",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "name": "_meeting",
+          "type": "uint256"
+        },
+        {
+          "name": "_motion",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50604051604080609a83398101806040526040811015602d57600080fd5b8101908080519060200190929190805190602001909291905050508060008190555081600181905550505060358060656000396000f3fe6080604052600080fdfea165627a7a7230582070e45fa2cbf4d18be76b27562b51ee71f6a3165a0022abeaf3624089f62468ff0029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a7230582070e45fa2cbf4d18be76b27562b51ee71f6a3165a0022abeaf3624089f62468ff0029",
+  "sourceMap": "126:864:4:-;;;458:106;8:9:-1;5:2;;;30:1;27;20:12;5:2;458:106:4;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;458:106:4;;;;;;;;;;;;;;;;;;;;;;;;;524:7;515:6;:16;;;;550:8;540:7;:18;;;;458:106;;126:864;;;;;;",
+  "deployedSourceMap": "126:864:4:-;;;;;",
+  "source": "pragma solidity ^0.5.0;\n\nimport './MotionBreaker.sol';\n\n/** @title A Motion contract, which maps to \"Votable\" Agenda items */\ncontract Motion {\n\n    uint motion;\n    uint meeting;\n\n    /** @dev A Motion can be Pending, Passed, or Failed */\n    enum State {Pending, Passed, Failed} //Enum\n\n   /** @dev Constructor for Motion contract\n       @param _meeting meeting ID of the active board meeting\n       @param _motion current motion under consideration */\n   constructor(uint _meeting, uint _motion) public {\n       motion = _motion;\n       meeting = _meeting;\n   }\n\n    // This type represents a single board vote.\n    struct MemberVote {\n        bool voted;  // if true, that person already voted\n        uint meeting; //index of the board meeting\n        uint motion;   // index of the voted motion\n    }\n\n    // This is a type for a single motion.\n    struct Proposal {\n        bytes32 name;   // short name (up to 32 bytes)\n        uint voteCount; // number of accumulated votes\n    }\n}\n",
+  "sourcePath": "/Users/davepander/Documents/Projects/Consensys/final-project-davepander/contracts/Motion.sol",
+  "ast": {
+    "absolutePath": "/Users/davepander/Documents/Projects/Consensys/final-project-davepander/contracts/Motion.sol",
+    "exportedSymbols": {
+      "Motion": [
+        245
+      ]
+    },
+    "id": 246,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 207,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "absolutePath": "/Users/davepander/Documents/Projects/Consensys/final-project-davepander/contracts/MotionBreaker.sol",
+        "file": "./MotionBreaker.sol",
+        "id": 208,
+        "nodeType": "ImportDirective",
+        "scope": 246,
+        "sourceUnit": 299,
+        "src": "25:29:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title A Motion contract, which maps to \"Votable\" Agenda items ",
+        "fullyImplemented": true,
+        "id": 245,
+        "linearizedBaseContracts": [
+          245
+        ],
+        "name": "Motion",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 210,
+            "name": "motion",
+            "nodeType": "VariableDeclaration",
+            "scope": 245,
+            "src": "149:11:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 209,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "149:4:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 212,
+            "name": "meeting",
+            "nodeType": "VariableDeclaration",
+            "scope": 245,
+            "src": "166:12:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 211,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "166:4:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "Motion.State",
+            "id": 216,
+            "members": [
+              {
+                "id": 213,
+                "name": "Pending",
+                "nodeType": "EnumValue",
+                "src": "256:7:4"
+              },
+              {
+                "id": 214,
+                "name": "Passed",
+                "nodeType": "EnumValue",
+                "src": "265:6:4"
+              },
+              {
+                "id": 215,
+                "name": "Failed",
+                "nodeType": "EnumValue",
+                "src": "273:6:4"
+              }
+            ],
+            "name": "State",
+            "nodeType": "EnumDefinition",
+            "src": "244:36:4"
+          },
+          {
+            "body": {
+              "id": 231,
+              "nodeType": "Block",
+              "src": "506:58:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 225,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 223,
+                      "name": "motion",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 210,
+                      "src": "515:6:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 224,
+                      "name": "_motion",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 220,
+                      "src": "524:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "515:16:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 226,
+                  "nodeType": "ExpressionStatement",
+                  "src": "515:16:4"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 229,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 227,
+                      "name": "meeting",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 212,
+                      "src": "540:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 228,
+                      "name": "_meeting",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 218,
+                      "src": "550:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "540:18:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 230,
+                  "nodeType": "ExpressionStatement",
+                  "src": "540:18:4"
+                }
+              ]
+            },
+            "documentation": "@dev Constructor for Motion contract\n@param _meeting meeting ID of the active board meeting\n@param _motion current motion under consideration ",
+            "id": 232,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 221,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 218,
+                  "name": "_meeting",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 232,
+                  "src": "470:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 217,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "470:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 220,
+                  "name": "_motion",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 232,
+                  "src": "485:12:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 219,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "485:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "469:29:4"
+            },
+            "returnParameters": {
+              "id": 222,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "506:0:4"
+            },
+            "scope": 245,
+            "src": "458:106:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Motion.MemberVote",
+            "id": 239,
+            "members": [
+              {
+                "constant": false,
+                "id": 234,
+                "name": "voted",
+                "nodeType": "VariableDeclaration",
+                "scope": 239,
+                "src": "647:10:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 233,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "647:4:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 236,
+                "name": "meeting",
+                "nodeType": "VariableDeclaration",
+                "scope": 239,
+                "src": "706:12:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 235,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "706:4:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 238,
+                "name": "motion",
+                "nodeType": "VariableDeclaration",
+                "scope": 239,
+                "src": "757:11:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 237,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "757:4:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "MemberVote",
+            "nodeType": "StructDefinition",
+            "scope": 245,
+            "src": "619:187:4",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Motion.Proposal",
+            "id": 244,
+            "members": [
+              {
+                "constant": false,
+                "id": 241,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 244,
+                "src": "881:12:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 240,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "881:7:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 243,
+                "name": "voteCount",
+                "nodeType": "VariableDeclaration",
+                "scope": 244,
+                "src": "936:14:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 242,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "936:4:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Proposal",
+            "nodeType": "StructDefinition",
+            "scope": 245,
+            "src": "855:133:4",
+            "visibility": "public"
+          }
+        ],
+        "scope": 246,
+        "src": "126:864:4"
+      }
+    ],
+    "src": "0:991:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/davepander/Documents/Projects/Consensys/final-project-davepander/contracts/Motion.sol",
+    "exportedSymbols": {
+      "Motion": [
+        245
+      ]
+    },
+    "id": 246,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 207,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "absolutePath": "/Users/davepander/Documents/Projects/Consensys/final-project-davepander/contracts/MotionBreaker.sol",
+        "file": "./MotionBreaker.sol",
+        "id": 208,
+        "nodeType": "ImportDirective",
+        "scope": 246,
+        "sourceUnit": 299,
+        "src": "25:29:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title A Motion contract, which maps to \"Votable\" Agenda items ",
+        "fullyImplemented": true,
+        "id": 245,
+        "linearizedBaseContracts": [
+          245
+        ],
+        "name": "Motion",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 210,
+            "name": "motion",
+            "nodeType": "VariableDeclaration",
+            "scope": 245,
+            "src": "149:11:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 209,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "149:4:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 212,
+            "name": "meeting",
+            "nodeType": "VariableDeclaration",
+            "scope": 245,
+            "src": "166:12:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 211,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "166:4:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "Motion.State",
+            "id": 216,
+            "members": [
+              {
+                "id": 213,
+                "name": "Pending",
+                "nodeType": "EnumValue",
+                "src": "256:7:4"
+              },
+              {
+                "id": 214,
+                "name": "Passed",
+                "nodeType": "EnumValue",
+                "src": "265:6:4"
+              },
+              {
+                "id": 215,
+                "name": "Failed",
+                "nodeType": "EnumValue",
+                "src": "273:6:4"
+              }
+            ],
+            "name": "State",
+            "nodeType": "EnumDefinition",
+            "src": "244:36:4"
+          },
+          {
+            "body": {
+              "id": 231,
+              "nodeType": "Block",
+              "src": "506:58:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 225,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 223,
+                      "name": "motion",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 210,
+                      "src": "515:6:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 224,
+                      "name": "_motion",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 220,
+                      "src": "524:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "515:16:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 226,
+                  "nodeType": "ExpressionStatement",
+                  "src": "515:16:4"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 229,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 227,
+                      "name": "meeting",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 212,
+                      "src": "540:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 228,
+                      "name": "_meeting",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 218,
+                      "src": "550:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "540:18:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 230,
+                  "nodeType": "ExpressionStatement",
+                  "src": "540:18:4"
+                }
+              ]
+            },
+            "documentation": "@dev Constructor for Motion contract\n@param _meeting meeting ID of the active board meeting\n@param _motion current motion under consideration ",
+            "id": 232,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 221,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 218,
+                  "name": "_meeting",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 232,
+                  "src": "470:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 217,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "470:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 220,
+                  "name": "_motion",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 232,
+                  "src": "485:12:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 219,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "485:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "469:29:4"
+            },
+            "returnParameters": {
+              "id": 222,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "506:0:4"
+            },
+            "scope": 245,
+            "src": "458:106:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Motion.MemberVote",
+            "id": 239,
+            "members": [
+              {
+                "constant": false,
+                "id": 234,
+                "name": "voted",
+                "nodeType": "VariableDeclaration",
+                "scope": 239,
+                "src": "647:10:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 233,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "647:4:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 236,
+                "name": "meeting",
+                "nodeType": "VariableDeclaration",
+                "scope": 239,
+                "src": "706:12:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 235,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "706:4:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 238,
+                "name": "motion",
+                "nodeType": "VariableDeclaration",
+                "scope": 239,
+                "src": "757:11:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 237,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "757:4:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "MemberVote",
+            "nodeType": "StructDefinition",
+            "scope": 245,
+            "src": "619:187:4",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Motion.Proposal",
+            "id": 244,
+            "members": [
+              {
+                "constant": false,
+                "id": 241,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 244,
+                "src": "881:12:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 240,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "881:7:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 243,
+                "name": "voteCount",
+                "nodeType": "VariableDeclaration",
+                "scope": 244,
+                "src": "936:14:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 242,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "936:4:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Proposal",
+            "nodeType": "StructDefinition",
+            "scope": 245,
+            "src": "855:133:4",
+            "visibility": "public"
+          }
+        ],
+        "scope": 246,
+        "src": "126:864:4"
+      }
+    ],
+    "src": "0:991:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-01-28T08:04:24.853Z",
+  "devdoc": {
+    "methods": {
+      "constructor": {
+        "details": "Constructor for Motion contract",
+        "params": {
+          "_meeting": "meeting ID of the active board meeting",
+          "_motion": "current motion under consideration "
+        }
+      }
+    },
+    "title": "A Motion contract, which maps to \"Votable\" Agenda items "
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
