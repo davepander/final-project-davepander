@@ -13,8 +13,13 @@ contract TestBoard {
 
   // Can we add a Board Member
   function testAddBoardMem() public {
-    bool returnState = board.addBoardMem(newBoardMem);
+    bool returnState = board.addBoardMem(newBoardMem,"David","Anderson");
     Assert.isTrue(returnState,"Board Member Added.");
+  }
+
+  function testListBoardName() public {
+    string returnState = board.listBoardName(newBoardMem);
+    Assert.equal("Anderson",returnState);
   }
 
 }
