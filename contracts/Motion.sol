@@ -2,7 +2,9 @@ pragma solidity ^0.5.0;
 
 import './MotionBreaker.sol';
 
-/** @title A Motion contract, which maps to "Votable" Agenda items */
+/** @title A Motion contract, which maps to "Votable" Agenda items
+ *    This also records the votes for each motion within each meeting.
+ */
 contract Motion {
 
     uint motion;

@@ -4,6 +4,10 @@ pragma solidity ^0.5.0;
 // import 'jsmnsol-lib/JsmnSolLib.sol';
 // import './Motion.sol';
 
+/**
+ * @Notice Unfortunately this Contract requires additional work relating to
+ *  parsing the JSON event file which contains the Agenda. Please disregard.
+ */
 contract Meeting {
 
     address chairPerson;
