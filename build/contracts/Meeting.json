@@ -8,24 +8,24 @@
       "type": "constructor"
     }
   ],
-  "bytecode": "0x6080604052348015600f57600080fd5b5060003390505060358060236000396000f3fe6080604052600080fdfea165627a7a723058201731f655afa7acb6e11e168e7fa538f9b43105ee203c715fcda7fffd63c933700029",
-  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058201731f655afa7acb6e11e168e7fa538f9b43105ee203c715fcda7fffd63c933700029",
-  "sourceMap": "97:287:1:-;;;271:65;8:9:-1;5:2;;;30:1;27;20:12;5:2;271:65:1;303:13;319:10;303:26;;271:65;97:287;;;;;;",
-  "deployedSourceMap": "97:287:1:-;;;;;",
-  "source": "pragma solidity ^0.5.0;\n\nimport './MeetingBreaker.sol';\n// import 'jsmnsol-lib/JsmnSolLib.sol';\n\ncontract Meeting {\n    // A dynamically-sized array of `Motion` structs.\n    // Proposal[] public motions;\n\n    /** @dev Set the owner to the creator of this contract */\n    constructor() public {\n\n        address owner = msg.sender;\n    }\n\n    enum State { Called, Adjourned } // Enum\n}\n",
+  "bytecode": "0x6080604052348015600f57600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550603580605d6000396000f3fe6080604052600080fdfea165627a7a723058207634be79fd699654a5706ec11d7dadc1b6ca788304441df0edfda6ffb6986d350029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058207634be79fd699654a5706ec11d7dadc1b6ca788304441df0edfda6ffb6986d350029",
+  "sourceMap": "126:761:1:-;;;384:62;8:9:-1;5:2;;;30:1;27;20:12;5:2;384:62:1;429:10;415:11;;:24;;;;;;;;;;;;;;;;;;126:761;;;;;;",
+  "deployedSourceMap": "126:761:1:-;;;;;",
+  "source": "pragma solidity ^0.5.0;\n\n// import './MeetingBreaker.sol';\n// import 'jsmnsol-lib/JsmnSolLib.sol';\n// import './Motion.sol';\n\ncontract Meeting {\n\n    address chairPerson;\n    enum State { Called, Adjourned } // Enum\n\n    // An array of `Motion` structs.\n    //Motion[] public motions;\n    //Present[] public address;\n\n    /** @dev Set the owner to the creator of this contract */\n    constructor() public {\n        chairPerson = msg.sender;\n    }\n\n    /*\n    function checkIn() public {\n        //Function for Board Members to check-in to the meeting.\n    };*/\n\n    /*\n    function getAgenda () public {\n      //Function for retrieving and parsing the Agenda JSON object into\n      an array of Motion calls.\n    };\n    */\n\n    /*function Adjourn () public returns(bool) {\n      // Check to see if all proposals are done\n\n      // If not complete\n\n      // If complete Return\n\n\n    }*/\n\n}\n",
   "sourcePath": "/Users/davepander/Documents/Projects/Consensys/final-project-davepander/contracts/Meeting.sol",
   "ast": {
     "absolutePath": "/Users/davepander/Documents/Projects/Consensys/final-project-davepander/contracts/Meeting.sol",
     "exportedSymbols": {
       "Meeting": [
-        95
+        138
       ]
     },
-    "id": 96,
+    "id": 139,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 81,
+        "id": 123,
         "literals": [
           "solidity",
           "^",
@@ -36,168 +36,180 @@
         "src": "0:23:1"
       },
       {
-        "absolutePath": "/Users/davepander/Documents/Projects/Consensys/final-project-davepander/contracts/MeetingBreaker.sol",
-        "file": "./MeetingBreaker.sol",
-        "id": 82,
-        "nodeType": "ImportDirective",
-        "scope": 96,
-        "sourceUnit": 149,
-        "src": "25:30:1",
-        "symbolAliases": [],
-        "unitAlias": ""
-      },
-      {
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 95,
+        "id": 138,
         "linearizedBaseContracts": [
-          95
+          138
         ],
         "name": "Meeting",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
+            "constant": false,
+            "id": 125,
+            "name": "chairPerson",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "150:19:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 124,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "150:7:1",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "Meeting.State",
+            "id": 128,
+            "members": [
+              {
+                "id": 126,
+                "name": "Called",
+                "nodeType": "EnumValue",
+                "src": "188:6:1"
+              },
+              {
+                "id": 127,
+                "name": "Adjourned",
+                "nodeType": "EnumValue",
+                "src": "196:9:1"
+              }
+            ],
+            "name": "State",
+            "nodeType": "EnumDefinition",
+            "src": "175:32:1"
+          },
+          {
             "body": {
-              "id": 90,
+              "id": 136,
               "nodeType": "Block",
-              "src": "292:44:1",
+              "src": "405:41:1",
               "statements": [
                 {
-                  "assignments": [
-                    86
-                  ],
-                  "declarations": [
-                    {
-                      "constant": false,
-                      "id": 86,
-                      "name": "owner",
-                      "nodeType": "VariableDeclaration",
-                      "scope": 90,
-                      "src": "303:13:1",
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_address",
-                        "typeString": "address"
-                      },
-                      "typeName": {
-                        "id": 85,
-                        "name": "address",
-                        "nodeType": "ElementaryTypeName",
-                        "src": "303:7:1",
-                        "stateMutability": "nonpayable",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
-                        }
-                      },
-                      "value": null,
-                      "visibility": "internal"
-                    }
-                  ],
-                  "id": 89,
-                  "initialValue": {
+                  "expression": {
                     "argumentTypes": null,
-                    "expression": {
-                      "argumentTypes": null,
-                      "id": 87,
-                      "name": "msg",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 422,
-                      "src": "319:3:1",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_magic_message",
-                        "typeString": "msg"
-                      }
-                    },
-                    "id": 88,
+                    "id": 134,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
-                    "memberName": "sender",
-                    "nodeType": "MemberAccess",
-                    "referencedDeclaration": null,
-                    "src": "319:10:1",
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 131,
+                      "name": "chairPerson",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 125,
+                      "src": "415:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 132,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 465,
+                        "src": "429:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 133,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "429:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "415:24:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_address_payable",
-                      "typeString": "address payable"
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
                     }
                   },
-                  "nodeType": "VariableDeclarationStatement",
-                  "src": "303:26:1"
+                  "id": 135,
+                  "nodeType": "ExpressionStatement",
+                  "src": "415:24:1"
                 }
               ]
             },
             "documentation": "@dev Set the owner to the creator of this contract ",
-            "id": 91,
+            "id": 137,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 83,
+              "id": 129,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "282:2:1"
+              "src": "395:2:1"
             },
             "returnParameters": {
-              "id": 84,
+              "id": 130,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "292:0:1"
+              "src": "405:0:1"
             },
-            "scope": 95,
-            "src": "271:65:1",
+            "scope": 138,
+            "src": "384:62:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
-          },
-          {
-            "canonicalName": "Meeting.State",
-            "id": 94,
-            "members": [
-              {
-                "id": 92,
-                "name": "Called",
-                "nodeType": "EnumValue",
-                "src": "355:6:1"
-              },
-              {
-                "id": 93,
-                "name": "Adjourned",
-                "nodeType": "EnumValue",
-                "src": "363:9:1"
-              }
-            ],
-            "name": "State",
-            "nodeType": "EnumDefinition",
-            "src": "342:32:1"
           }
         ],
-        "scope": 96,
-        "src": "97:287:1"
+        "scope": 139,
+        "src": "126:761:1"
       }
     ],
-    "src": "0:385:1"
+    "src": "0:888:1"
   },
   "legacyAST": {
     "absolutePath": "/Users/davepander/Documents/Projects/Consensys/final-project-davepander/contracts/Meeting.sol",
     "exportedSymbols": {
       "Meeting": [
-        95
+        138
       ]
     },
-    "id": 96,
+    "id": 139,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 81,
+        "id": 123,
         "literals": [
           "solidity",
           "^",
@@ -208,155 +220,167 @@
         "src": "0:23:1"
       },
       {
-        "absolutePath": "/Users/davepander/Documents/Projects/Consensys/final-project-davepander/contracts/MeetingBreaker.sol",
-        "file": "./MeetingBreaker.sol",
-        "id": 82,
-        "nodeType": "ImportDirective",
-        "scope": 96,
-        "sourceUnit": 149,
-        "src": "25:30:1",
-        "symbolAliases": [],
-        "unitAlias": ""
-      },
-      {
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 95,
+        "id": 138,
         "linearizedBaseContracts": [
-          95
+          138
         ],
         "name": "Meeting",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
+            "constant": false,
+            "id": 125,
+            "name": "chairPerson",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "150:19:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 124,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "150:7:1",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "Meeting.State",
+            "id": 128,
+            "members": [
+              {
+                "id": 126,
+                "name": "Called",
+                "nodeType": "EnumValue",
+                "src": "188:6:1"
+              },
+              {
+                "id": 127,
+                "name": "Adjourned",
+                "nodeType": "EnumValue",
+                "src": "196:9:1"
+              }
+            ],
+            "name": "State",
+            "nodeType": "EnumDefinition",
+            "src": "175:32:1"
+          },
+          {
             "body": {
-              "id": 90,
+              "id": 136,
               "nodeType": "Block",
-              "src": "292:44:1",
+              "src": "405:41:1",
               "statements": [
                 {
-                  "assignments": [
-                    86
-                  ],
-                  "declarations": [
-                    {
-                      "constant": false,
-                      "id": 86,
-                      "name": "owner",
-                      "nodeType": "VariableDeclaration",
-                      "scope": 90,
-                      "src": "303:13:1",
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_address",
-                        "typeString": "address"
-                      },
-                      "typeName": {
-                        "id": 85,
-                        "name": "address",
-                        "nodeType": "ElementaryTypeName",
-                        "src": "303:7:1",
-                        "stateMutability": "nonpayable",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
-                        }
-                      },
-                      "value": null,
-                      "visibility": "internal"
-                    }
-                  ],
-                  "id": 89,
-                  "initialValue": {
+                  "expression": {
                     "argumentTypes": null,
-                    "expression": {
-                      "argumentTypes": null,
-                      "id": 87,
-                      "name": "msg",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 422,
-                      "src": "319:3:1",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_magic_message",
-                        "typeString": "msg"
-                      }
-                    },
-                    "id": 88,
+                    "id": 134,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
-                    "memberName": "sender",
-                    "nodeType": "MemberAccess",
-                    "referencedDeclaration": null,
-                    "src": "319:10:1",
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 131,
+                      "name": "chairPerson",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 125,
+                      "src": "415:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 132,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 465,
+                        "src": "429:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 133,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "429:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "415:24:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_address_payable",
-                      "typeString": "address payable"
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
                     }
                   },
-                  "nodeType": "VariableDeclarationStatement",
-                  "src": "303:26:1"
+                  "id": 135,
+                  "nodeType": "ExpressionStatement",
+                  "src": "415:24:1"
                 }
               ]
             },
             "documentation": "@dev Set the owner to the creator of this contract ",
-            "id": 91,
+            "id": 137,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 83,
+              "id": 129,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "282:2:1"
+              "src": "395:2:1"
             },
             "returnParameters": {
-              "id": 84,
+              "id": 130,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "292:0:1"
+              "src": "405:0:1"
             },
-            "scope": 95,
-            "src": "271:65:1",
+            "scope": 138,
+            "src": "384:62:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
-          },
-          {
-            "canonicalName": "Meeting.State",
-            "id": 94,
-            "members": [
-              {
-                "id": 92,
-                "name": "Called",
-                "nodeType": "EnumValue",
-                "src": "355:6:1"
-              },
-              {
-                "id": 93,
-                "name": "Adjourned",
-                "nodeType": "EnumValue",
-                "src": "363:9:1"
-              }
-            ],
-            "name": "State",
-            "nodeType": "EnumDefinition",
-            "src": "342:32:1"
           }
         ],
-        "scope": 96,
-        "src": "97:287:1"
+        "scope": 139,
+        "src": "126:761:1"
       }
     ],
-    "src": "0:385:1"
+    "src": "0:888:1"
   },
   "compiler": {
     "name": "solc",
@@ -364,7 +388,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-01-28T08:04:24.852Z",
+  "updatedAt": "2019-01-28T10:54:19.692Z",
   "devdoc": {
     "methods": {
       "constructor": {
