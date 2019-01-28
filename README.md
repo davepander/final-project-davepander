@@ -26,5 +26,4 @@ For this final project exercise we will focus on the following tasks.
   For this exercise we are making the following assumptions:
     The Owner of the Board contract is the BoardChair
     The BoardChair authorizes BoardMember addresses (MetaMask and potentially through uPort)
-
     The Meeting Agenda (JSON file) has already been stored (ideally on IPFS) and is referenced when the meeting is called to order.
