@@ -43,8 +43,9 @@ This will provide an immutable and transparent record of board meetings. In this
     The Meeting Agenda (JSON file) has already been stored (ideally on IPFS) and is referenced when the meeting is called to order.
 
 ## Other Documents
-Design Patterns [design_pattern_desicions.md] (../Documentation/design_pattern_desicions.md)
-Common Attack Vectors [avoiding_common_attacks.md] (../Documentation/avoiding_common_attacks.md) 
+Design Patterns [design_pattern_desicions.md](../Documentation/design_pattern_desicions.md)
+
+Common Attack Vectors [avoiding_common_attacks.md](../Documentation/avoiding_common_attacks.md)
 
 ## Setup
 ## Development setup:
