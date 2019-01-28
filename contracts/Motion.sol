@@ -1,5 +1,7 @@
 pragma solidity ^0.5.0;
 
+import './MotionBreaker.sol';
+
 contract Motion {
 
    constructor() public {
