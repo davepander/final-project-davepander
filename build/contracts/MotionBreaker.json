@@ -1,0 +1,1308 @@
+{
+  "contractName": "MotionBreaker",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "state",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "stopContract",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "startContract",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a360008060146101000a81548160ff021916908360018111156100eb57fe5b02179055506104f8806100ff6000396000f3fe608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806312253a6c146100885780635fb02f4d1461009f578063715018a6146100b65780638da5cb5b146100cd5780638f32d59b14610124578063c19d93fb14610153578063f2fde38b1461018c575b600080fd5b34801561009457600080fd5b5061009d6101dd565b005b3480156100ab57600080fd5b506100b4610216565b005b3480156100c257600080fd5b506100cb61024e565b005b3480156100d957600080fd5b506100e2610320565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561013057600080fd5b50610139610349565b604051808215151515815260200191505060405180910390f35b34801561015f57600080fd5b506101686103a0565b6040518082600181111561017857fe5b60ff16815260200191505060405180910390f35b34801561019857600080fd5b506101db600480360360208110156101af57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103b3565b005b6101e5610349565b15156101f057600080fd5b6001600060146101000a81548160ff0219169083600181111561020f57fe5b0217905550565b61021e610349565b151561022957600080fd5b60008060146101000a81548160ff0219169083600181111561024757fe5b0217905550565b610256610349565b151561026157600080fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b600060149054906101000a900460ff1681565b6103bb610349565b15156103c657600080fd5b6103cf816103d2565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561040e57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fea165627a7a72305820ce9485f84c12cec185867f2c5b98da66013b4d728282f480138191f5b904e4aa0029",
+  "deployedBytecode": "0x608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806312253a6c146100885780635fb02f4d1461009f578063715018a6146100b65780638da5cb5b146100cd5780638f32d59b14610124578063c19d93fb14610153578063f2fde38b1461018c575b600080fd5b34801561009457600080fd5b5061009d6101dd565b005b3480156100ab57600080fd5b506100b4610216565b005b3480156100c257600080fd5b506100cb61024e565b005b3480156100d957600080fd5b506100e2610320565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561013057600080fd5b50610139610349565b604051808215151515815260200191505060405180910390f35b34801561015f57600080fd5b506101686103a0565b6040518082600181111561017857fe5b60ff16815260200191505060405180910390f35b34801561019857600080fd5b506101db600480360360208110156101af57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103b3565b005b6101e5610349565b15156101f057600080fd5b6001600060146101000a81548160ff0219169083600181111561020f57fe5b0217905550565b61021e610349565b151561022957600080fd5b60008060146101000a81548160ff0219169083600181111561024757fe5b0217905550565b610256610349565b151561026157600080fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b600060149054906101000a900460ff1681565b6103bb610349565b15156103c657600080fd5b6103cf816103d2565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561040e57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fea165627a7a72305820ce9485f84c12cec185867f2c5b98da66013b4d728282f480138191f5b904e4aa0029",
+  "sourceMap": "115:652:5:-;;;224:67;8:9:-1;5:2;;;30:1;27;20:12;5:2;224:67:5;524:10:6;515:6;;:19;;;;;;;;;;;;;;;;;;582:6;;;;;;;;;;;549:40;;578:1;549:40;;;;;;;;;;;;266:20:5;258:5;;:28;;;;;;;;;;;;;;;;;;;;;;;;115:652;;;;;;",
+  "deployedSourceMap": "115:652:5:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;519:92;;8:9:-1;5:2;;;30:1;27;20:12;5:2;519:92:5;;;;;;672:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;672:93:5;;;;;;1347:137:6;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1347:137:6;;;;;;659:77;;8:9:-1;5:2;;;30:1;27;20:12;5:2;659:77:6;;;;;;;;;;;;;;;;;;;;;;;;;;;979:90;;8:9:-1;5:2;;;30:1;27;20:12;5:2;979:90:6;;;;;;;;;;;;;;;;;;;;;;;;;;;194:25:5;;8:9:-1;5:2;;;30:1;27;20:12;5:2;194:25:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1655:107:6;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1655:107:6;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1655:107:6;;;;;;;;;;;;;;;;;;;;;;519:92:5;863:9:6;:7;:9::i;:::-;855:18;;;;;;;;586:20:5;578:5;;:28;;;;;;;;;;;;;;;;;;;;;;;;519:92::o;672:93::-;863:9:6;:7;:9::i;:::-;855:18;;;;;;;;740:20:5;732:5;;:28;;;;;;;;;;;;;;;;;;;;;;;;672:93::o;1347:137:6:-;863:9;:7;:9::i;:::-;855:18;;;;;;;;1445:1;1408:40;;1429:6;;;;;;;;;;;1408:40;;;;;;;;;;;;1475:1;1458:6;;:19;;;;;;;;;;;;;;;;;;1347:137::o;659:77::-;697:7;723:6;;;;;;;;;;;716:13;;659:77;:::o;979:90::-;1019:4;1056:6;;;;;;;;;;;1042:20;;:10;:20;;;1035:27;;979:90;:::o;194:25:5:-;;;;;;;;;;;;;:::o;1655:107:6:-;863:9;:7;:9::i;:::-;855:18;;;;;;;;1727:28;1746:8;1727:18;:28::i;:::-;1655:107;:::o;1906:183::-;1999:1;1979:22;;:8;:22;;;;1971:31;;;;;;;;2046:8;2017:38;;2038:6;;;;;;;;;;;2017:38;;;;;;;;;;;;2074:8;2065:6;;:17;;;;;;;;;;;;;;;;;;1906:183;:::o",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"openzeppelin-solidity/contracts/ownership/Ownable.sol\";\n\n// @title Motion Breaker\ncontract MotionBreaker is Ownable {\n  enum MotionStates { Started, Stopped }\n  MotionStates public state;\n\n  constructor ()\n    public\n  {\n    state = MotionStates.Started;\n  }\n\n  // Only allow function to be executed with Motion Contract is in state \"Started\"\n  modifier motionStarted() {\n    require(state == MotionStates.Started);\n    _;\n  }\n\n  // Enables circuit breaker stopping all functionality\n  function stopContract()\n    external\n    onlyOwner\n  {\n    state = MotionStates.Stopped;\n  }\n\n  // Disables circuit breaker enabling all functionality\n  function startContract()\n    external\n    onlyOwner\n  {\n    state = MotionStates.Started;\n  }\n}\n",
+  "sourcePath": "/home/davepander/projects/final-project-davepander/contracts/MotionBreaker.sol",
+  "ast": {
+    "absolutePath": "/home/davepander/projects/final-project-davepander/contracts/MotionBreaker.sol",
+    "exportedSymbols": {
+      "MotionBreaker": [
+        272
+      ]
+    },
+    "id": 273,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 221,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:5"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 222,
+        "nodeType": "ImportDirective",
+        "scope": 273,
+        "sourceUnit": 382,
+        "src": "25:63:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 223,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 381,
+              "src": "141:7:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$381",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 224,
+            "nodeType": "InheritanceSpecifier",
+            "src": "141:7:5"
+          }
+        ],
+        "contractDependencies": [
+          381
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 272,
+        "linearizedBaseContracts": [
+          272,
+          381
+        ],
+        "name": "MotionBreaker",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "MotionBreaker.MotionStates",
+            "id": 227,
+            "members": [
+              {
+                "id": 225,
+                "name": "Started",
+                "nodeType": "EnumValue",
+                "src": "173:7:5"
+              },
+              {
+                "id": 226,
+                "name": "Stopped",
+                "nodeType": "EnumValue",
+                "src": "182:7:5"
+              }
+            ],
+            "name": "MotionStates",
+            "nodeType": "EnumDefinition",
+            "src": "153:38:5"
+          },
+          {
+            "constant": false,
+            "id": 229,
+            "name": "state",
+            "nodeType": "VariableDeclaration",
+            "scope": 272,
+            "src": "194:25:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_MotionStates_$227",
+              "typeString": "enum MotionBreaker.MotionStates"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 228,
+              "name": "MotionStates",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 227,
+              "src": "194:12:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_MotionStates_$227",
+                "typeString": "enum MotionBreaker.MotionStates"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 237,
+              "nodeType": "Block",
+              "src": "252:39:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 235,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 232,
+                      "name": "state",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 229,
+                      "src": "258:5:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 233,
+                        "name": "MotionStates",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 227,
+                        "src": "266:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_MotionStates_$227_$",
+                          "typeString": "type(enum MotionBreaker.MotionStates)"
+                        }
+                      },
+                      "id": 234,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Started",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "266:20:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "src": "258:28:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_MotionStates_$227",
+                      "typeString": "enum MotionBreaker.MotionStates"
+                    }
+                  },
+                  "id": 236,
+                  "nodeType": "ExpressionStatement",
+                  "src": "258:28:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 238,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 230,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "236:2:5"
+            },
+            "returnParameters": {
+              "id": 231,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "252:0:5"
+            },
+            "scope": 272,
+            "src": "224:67:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 248,
+              "nodeType": "Block",
+              "src": "403:56:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_MotionStates_$227",
+                          "typeString": "enum MotionBreaker.MotionStates"
+                        },
+                        "id": 244,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 241,
+                          "name": "state",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 229,
+                          "src": "417:5:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_MotionStates_$227",
+                            "typeString": "enum MotionBreaker.MotionStates"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 242,
+                            "name": "MotionStates",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 227,
+                            "src": "426:12:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_MotionStates_$227_$",
+                              "typeString": "type(enum MotionBreaker.MotionStates)"
+                            }
+                          },
+                          "id": 243,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "Started",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "426:20:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_MotionStates_$227",
+                            "typeString": "enum MotionBreaker.MotionStates"
+                          }
+                        },
+                        "src": "417:29:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 240,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        399,
+                        400
+                      ],
+                      "referencedDeclaration": 399,
+                      "src": "409:7:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 245,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "409:38:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 246,
+                  "nodeType": "ExpressionStatement",
+                  "src": "409:38:5"
+                },
+                {
+                  "id": 247,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "453:1:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 249,
+            "name": "motionStarted",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 239,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "400:2:5"
+            },
+            "src": "378:81:5",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 259,
+              "nodeType": "Block",
+              "src": "572:39:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 257,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 254,
+                      "name": "state",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 229,
+                      "src": "578:5:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 255,
+                        "name": "MotionStates",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 227,
+                        "src": "586:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_MotionStates_$227_$",
+                          "typeString": "type(enum MotionBreaker.MotionStates)"
+                        }
+                      },
+                      "id": 256,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Stopped",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "586:20:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "src": "578:28:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_MotionStates_$227",
+                      "typeString": "enum MotionBreaker.MotionStates"
+                    }
+                  },
+                  "id": 258,
+                  "nodeType": "ExpressionStatement",
+                  "src": "578:28:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 260,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 252,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 251,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 315,
+                  "src": "560:9:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "560:9:5"
+              }
+            ],
+            "name": "stopContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 250,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "540:2:5"
+            },
+            "returnParameters": {
+              "id": 253,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "572:0:5"
+            },
+            "scope": 272,
+            "src": "519:92:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 270,
+              "nodeType": "Block",
+              "src": "726:39:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 268,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 265,
+                      "name": "state",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 229,
+                      "src": "732:5:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 266,
+                        "name": "MotionStates",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 227,
+                        "src": "740:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_MotionStates_$227_$",
+                          "typeString": "type(enum MotionBreaker.MotionStates)"
+                        }
+                      },
+                      "id": 267,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Started",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "740:20:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "src": "732:28:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_MotionStates_$227",
+                      "typeString": "enum MotionBreaker.MotionStates"
+                    }
+                  },
+                  "id": 269,
+                  "nodeType": "ExpressionStatement",
+                  "src": "732:28:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 271,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 263,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 262,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 315,
+                  "src": "714:9:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "714:9:5"
+              }
+            ],
+            "name": "startContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 261,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "694:2:5"
+            },
+            "returnParameters": {
+              "id": 264,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "726:0:5"
+            },
+            "scope": 272,
+            "src": "672:93:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 273,
+        "src": "115:652:5"
+      }
+    ],
+    "src": "0:768:5"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/davepander/projects/final-project-davepander/contracts/MotionBreaker.sol",
+    "exportedSymbols": {
+      "MotionBreaker": [
+        272
+      ]
+    },
+    "id": 273,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 221,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:5"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 222,
+        "nodeType": "ImportDirective",
+        "scope": 273,
+        "sourceUnit": 382,
+        "src": "25:63:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 223,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 381,
+              "src": "141:7:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$381",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 224,
+            "nodeType": "InheritanceSpecifier",
+            "src": "141:7:5"
+          }
+        ],
+        "contractDependencies": [
+          381
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 272,
+        "linearizedBaseContracts": [
+          272,
+          381
+        ],
+        "name": "MotionBreaker",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "MotionBreaker.MotionStates",
+            "id": 227,
+            "members": [
+              {
+                "id": 225,
+                "name": "Started",
+                "nodeType": "EnumValue",
+                "src": "173:7:5"
+              },
+              {
+                "id": 226,
+                "name": "Stopped",
+                "nodeType": "EnumValue",
+                "src": "182:7:5"
+              }
+            ],
+            "name": "MotionStates",
+            "nodeType": "EnumDefinition",
+            "src": "153:38:5"
+          },
+          {
+            "constant": false,
+            "id": 229,
+            "name": "state",
+            "nodeType": "VariableDeclaration",
+            "scope": 272,
+            "src": "194:25:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_MotionStates_$227",
+              "typeString": "enum MotionBreaker.MotionStates"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 228,
+              "name": "MotionStates",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 227,
+              "src": "194:12:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_MotionStates_$227",
+                "typeString": "enum MotionBreaker.MotionStates"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 237,
+              "nodeType": "Block",
+              "src": "252:39:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 235,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 232,
+                      "name": "state",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 229,
+                      "src": "258:5:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 233,
+                        "name": "MotionStates",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 227,
+                        "src": "266:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_MotionStates_$227_$",
+                          "typeString": "type(enum MotionBreaker.MotionStates)"
+                        }
+                      },
+                      "id": 234,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Started",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "266:20:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "src": "258:28:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_MotionStates_$227",
+                      "typeString": "enum MotionBreaker.MotionStates"
+                    }
+                  },
+                  "id": 236,
+                  "nodeType": "ExpressionStatement",
+                  "src": "258:28:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 238,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 230,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "236:2:5"
+            },
+            "returnParameters": {
+              "id": 231,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "252:0:5"
+            },
+            "scope": 272,
+            "src": "224:67:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 248,
+              "nodeType": "Block",
+              "src": "403:56:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_MotionStates_$227",
+                          "typeString": "enum MotionBreaker.MotionStates"
+                        },
+                        "id": 244,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 241,
+                          "name": "state",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 229,
+                          "src": "417:5:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_MotionStates_$227",
+                            "typeString": "enum MotionBreaker.MotionStates"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 242,
+                            "name": "MotionStates",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 227,
+                            "src": "426:12:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_MotionStates_$227_$",
+                              "typeString": "type(enum MotionBreaker.MotionStates)"
+                            }
+                          },
+                          "id": 243,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "Started",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "426:20:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_MotionStates_$227",
+                            "typeString": "enum MotionBreaker.MotionStates"
+                          }
+                        },
+                        "src": "417:29:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 240,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        399,
+                        400
+                      ],
+                      "referencedDeclaration": 399,
+                      "src": "409:7:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 245,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "409:38:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 246,
+                  "nodeType": "ExpressionStatement",
+                  "src": "409:38:5"
+                },
+                {
+                  "id": 247,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "453:1:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 249,
+            "name": "motionStarted",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 239,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "400:2:5"
+            },
+            "src": "378:81:5",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 259,
+              "nodeType": "Block",
+              "src": "572:39:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 257,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 254,
+                      "name": "state",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 229,
+                      "src": "578:5:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 255,
+                        "name": "MotionStates",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 227,
+                        "src": "586:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_MotionStates_$227_$",
+                          "typeString": "type(enum MotionBreaker.MotionStates)"
+                        }
+                      },
+                      "id": 256,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Stopped",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "586:20:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "src": "578:28:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_MotionStates_$227",
+                      "typeString": "enum MotionBreaker.MotionStates"
+                    }
+                  },
+                  "id": 258,
+                  "nodeType": "ExpressionStatement",
+                  "src": "578:28:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 260,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 252,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 251,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 315,
+                  "src": "560:9:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "560:9:5"
+              }
+            ],
+            "name": "stopContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 250,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "540:2:5"
+            },
+            "returnParameters": {
+              "id": 253,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "572:0:5"
+            },
+            "scope": 272,
+            "src": "519:92:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 270,
+              "nodeType": "Block",
+              "src": "726:39:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 268,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 265,
+                      "name": "state",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 229,
+                      "src": "732:5:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 266,
+                        "name": "MotionStates",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 227,
+                        "src": "740:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_MotionStates_$227_$",
+                          "typeString": "type(enum MotionBreaker.MotionStates)"
+                        }
+                      },
+                      "id": 267,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Started",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "740:20:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_MotionStates_$227",
+                        "typeString": "enum MotionBreaker.MotionStates"
+                      }
+                    },
+                    "src": "732:28:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_MotionStates_$227",
+                      "typeString": "enum MotionBreaker.MotionStates"
+                    }
+                  },
+                  "id": 269,
+                  "nodeType": "ExpressionStatement",
+                  "src": "732:28:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 271,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 263,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 262,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 315,
+                  "src": "714:9:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "714:9:5"
+              }
+            ],
+            "name": "startContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 261,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "694:2:5"
+            },
+            "returnParameters": {
+              "id": 264,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "726:0:5"
+            },
+            "scope": 272,
+            "src": "672:93:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 273,
+        "src": "115:652:5"
+      }
+    ],
+    "src": "0:768:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-01-28T02:36:09.368Z",
+  "devdoc": {
+    "methods": {
+      "isOwner()": {
+        "return": "true if `msg.sender` is the owner of the contract."
+      },
+      "owner()": {
+        "return": "the address of the owner."
+      },
+      "renounceOwnership()": {
+        "details": "Allows the current owner to relinquish control of the contract."
+      },
+      "transferOwnership(address)": {
+        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
+        "params": {
+          "newOwner": "The address to transfer ownership to."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "renounceOwnership()": {
+        "notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
+      }
+    }
+  }
+}

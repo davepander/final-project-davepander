@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-import "zeppelin/ownership/Ownable.sol";
+import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 // @title Motion Breaker
 contract MotionBreaker is Ownable {
