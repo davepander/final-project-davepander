@@ -1,12 +1,12 @@
 
-#Multiple design patterns were taken into consideration.
+# Multiple design patterns were taken into consideration.
 
 The overriding design principle (that led to complexity) was the **Mutli-Contract Multi-State** framework.  Within that there were additional design patterns considered:
 
-##Not used:
+## Not used:
 Because this contract does not deal with custody or payments, patterns such as **Pull Payment** were not considered.
 
-##Used:
+## Used:
 That said, ownership of the Board is an important factor for this dApp, and therefor **Ownership Pattern** was used throughout to ensure that critical contract methods are only executable by the owner. In addition the **Action Restriction** pattern was also implemented to ensure that only board members are allowed to interact with functions to which they are entitled access.  Non-board members and/or entitled constituents (potentially delineated by ERC20 Token ownership) will be able to view meetings, but not impact votes or how the meeting progresses.
 
 The Board itself can exist, and cease to exist, so a **Mortal Pattern** was implemented to allow the owner to kill or dissolve the board. This functionality will be wrapped in a further function that includes board consent.
