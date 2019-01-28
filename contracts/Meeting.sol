@@ -1,5 +1,7 @@
 pragma solidity ^0.5.0;
 
+import './MeetingBreaker.sol';
+
 contract Meeting {
 // A dynamically-sized array of `Motion` structs.
     Proposal[] public motions;
