@@ -4,7 +4,7 @@ contract Motion {
 
    constructor() public {
       /* Set the owner to the creator of this contract */
-      owner = msg.sender;
+      address owner = msg.sender;
    }
 
    enum State {Passed, Failed} //Enum
